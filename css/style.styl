@@ -1,0 +1,81 @@
+@import 'nib'
+
+body
+  font-family: 'Source Sans Pro', sans-serif
+  color: #444
+  line-height: 1.5em
+  font-size: 16px
+  background-image: url(img/bg.png)
+  margin: 10px
+  padding: 0
+
+h1, h2, h3
+  color: #0A6344
+  line-height: 1.1em
+  font-weight: 300
+
+p + p
+  text-indent: 2em
+
+a
+  color: #09BA7C
+  transition: all 0.5s ease
+
+a:hover
+  color: #0A6344
+
+#container
+  display: flex
+  flex-direction: column
+  width: 100%
+
+.article header
+  box-ordinal-group: 2
+  order: 2
+
+header
+  width: auto
+  margin: 10px
+  padding: 10px 0
+  margin-bottom: -10px
+  padding-bottom: 10px
+
+header p
+  margin: 10px
+  margin-top: 0
+
+header h1, header h2
+  @extends header p
+  font-size: 2em
+
+header ul
+  list-style: none
+  margin: 0
+  padding: 0
+  border-top: 1px solid #bbb
+  border-top-color: rgba(0, 0, 0, 0.2)
+
+header a
+  display: block
+  height: 30px
+  line-height: 30px
+  padding: 10px
+  border-top: 1px solid #FFF
+  border-bottom: 1px solid #bbb
+  border-bottom-color: rgba(0, 0, 0, 0.2)
+
+header li:last-child a
+  border-bottom: none
+
+section
+  background-color: #FFF
+  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.3)
+  border-radius: 5px
+  padding: 20px
+  max-width: 35em
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (   min--moz-device-pixel-ratio: 1.5), only screen and (     -o-min-device-pixel-ratio: 1.5), only screen and (        min-device-pixel-ratio: 1.5), only screen and (                min-resolution: 144dpi), only screen and (                min-resolution: 1.5dppx)
+  body
+    background-image: url(img/bg@2X.png)
+    background-size: 200px 200px
+
