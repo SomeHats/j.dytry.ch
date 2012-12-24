@@ -1,14 +1,65 @@
----
-layout: default
-home: true
----
-<h2 role="heading">Stuff I've Written</h2>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+    <title>Joe Dytrych - @SomeHats</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  </head>
+  <body class="home" >
+    <div id="container">
+      <header role="banner">
+        <h1>
+        <a href="/">Joe Dytrych</a>
+        </h1>
+        <button>m</button>
+        <p>17. Student. Mozillian. Developer. Not tall enough. Tea lover. Owns small dog. I call myself &quot;SomeHats&quot; online because no one can spell my real name.</p>
+        <nav role="navigation">
+          <ul>
+            <li><a href="/" class="icon-home">
+              Home
+            </a></li>
+            <li><a href="&#x6d;&#97;&#105;&#x6c;&#x74;&#111;&#x3a;&#x6d;&#x65;&#64;&#x6a;&#x64;&#121;&#116;&#114;&#x79;&#99;&#104;&#x2e;&#x63;&#111;&#46;&#117;&#107;" title="Email" class="icon-email">
+              &#x6d;&#x65;&#x40;&#x6a;&#x64;&#x79;&#x74;&#114;&#121;&#x63;&#x68;&#x2e;&#x63;&#111;&#x2e;&#x75;&#x6b;
+            </a></li>
+            <li><a href="http://twitter.com/SomeHats" title="Twitter" class="icon-twitter">
+              @SomeHats
+            </a></li>
+            <li><a href="https://plus.google.com/115388676990964283956" title="Google +" class="icon-gplus">
+              Joe Dytrych
+            </a></li>
+            <li><a href="https://github.com/SomeHats" title="GitHub"  class="icon-github">
+              SomeHats
+            </a></li>
+            <li><a href="https://vimeo.com/somehats" title="Vimeo" class="icon-vimeo">
+              SomeHats
+            </a></li>
+          </ul>
+        </nav>
+      </header>
+      <section role="main">
+        <h2 role="heading">Stuff I've Written</h2>
 <ul class="listing">
-  {% for post in site.posts %}
+  
   <li>
-    <a href="{{ post.url }}">
-      <h3>{{ post.title }}</h3>
+    <a href="/2012/new-blog.html">
+      <h3>New Blog!</h3>
     </a>
   </li>
-  {% endfor %}
+  
+  <li>
+    <a href="/2012/codecards.html">
+      <h3>CodeCards</h3>
+    </a>
+  </li>
+  
 </ul>
+      </section>
+      <footer>
+
+      </footer>
+    </container>
+    <script type="text/javascript" src="/js/nav.js"></script>
+  </body>
+</html>
