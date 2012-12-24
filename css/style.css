@@ -4,13 +4,13 @@ body {
   line-height: 1.5em;
   font-size: 16px;
   background-image: url("img/bg.png");
-  margin: 10px;
+  margin: 20px;
   padding: 0;
 }
 h1,
 h2,
 h3 {
-  color: #0a6344;
+  color: #056141;
   line-height: 1.1em;
   font-weight: 300;
 }
@@ -18,7 +18,7 @@ p + p {
   text-indent: 2em;
 }
 a {
-  color: #09ba7c;
+  color: #0da570;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
@@ -26,7 +26,7 @@ a {
   transition: all 0.5s ease;
 }
 a:hover {
-  color: #0a6344;
+  color: #086343;
 }
 #container {
   display: -webkit-box;
@@ -56,8 +56,9 @@ a:hover {
   order: 2;
 }
 header {
-  width: auto;
-  margin: 10px;
+  width: 100%;
+  max-width: 35em;
+  margin: auto;
   padding: 10px 0;
   margin-bottom: -10px;
   padding-bottom: 10px;
@@ -81,24 +82,34 @@ header ul {
 }
 header a {
   display: block;
-  height: 30px;
-  line-height: 30px;
-  padding: 10px;
+  height: 35px;
+  line-height: 35px;
+  padding: 5px 10px;
   border-top: 1px solid #fff;
   border-bottom: 1px solid #bbb;
   border-bottom-color: rgba(0,0,0,0.2);
+}
+header a:hover {
+  padding-left: 20px;
 }
 header li:last-child a {
   border-bottom: none;
 }
 section {
   background-color: #fff;
+  background-color: rgba(255,255,255,0.5);
   -webkit-box-shadow: 0 0px 5px rgba(0,0,0,0.3);
   box-shadow: 0 0px 5px rgba(0,0,0,0.3);
   -webkit-border-radius: 5px;
   border-radius: 5px;
-  padding: 20px;
+  padding: 20px 0;
   max-width: 35em;
+  margin: auto;
+}
+section > h2,
+section > h1,
+section p {
+  margin: 0 20px;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (   min--moz-device-pixel-ratio: 1.5), only screen and (     -o-min-device-pixel-ratio: 1.5), only screen and (        min-device-pixel-ratio: 1.5), only screen and (                min-resolution: 144dpi), only screen and (                min-resolution: 1.5dppx) {
   body {
@@ -106,5 +117,87 @@ section {
     -webkit-background-size: 200px 200px;
     -moz-background-size: 200px 200px;
     background-size: 200px 200px;
+  }
+}
+@media only screen and (min-width: 27em) and (max-width: 46.999em) {
+  header li {
+    display: inline-block;
+    width: 50%;
+    margin-right: -3px;
+  }
+  header li:nth-child(2n) {
+    border-left: 1px solid #fff;
+  }
+  header li:nth-child(2n+1) {
+    border-right: 1px solid #bbb;
+  }
+  header li:nth-last-child(2) a {
+    border-bottom: none;
+  }
+}
+@media only screen and (min-width: 47em) {
+  #container {
+    display: block;
+    padding-left: 18em;
+    max-width: 53em;
+    margin: auto;
+  }
+  header {
+    width: 17em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    padding-top: 30px;
+  }
+  header li:last-child a {
+    border-bottom: 1px solid #bbb;
+  }
+  header ul {
+    border-bottom: 1px solid #fff;
+  }
+  section {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 47em) and (max-height: 32em) {
+  header {
+    position: absolute;
+  }
+}
+@media only screen and (min-width: 56em) {
+  #container {
+    position: absolute;
+    width: 53em;
+    left: 50%;
+    margin-left: -26.5em;
+    padding: 0;
+  }
+  header {
+    left: 50%;
+    margin-left: -27.5em;
+  }
+  section {
+    margin-left: 18em;
+  }
+}
+@media only screen and (min-width: 1080px) {
+  body {
+    font-size: 18px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  body {
+    font-size: 20px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  body {
+    font-size: 22px;
+  }
+}
+@media only screen and (min-width: 1680px) {
+  body {
+    font-size: 24px;
   }
 }
