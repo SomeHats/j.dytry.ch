@@ -10,13 +10,57 @@ base = #00FFA6
 links = darken(desaturate(base, 15%), 30%)
 headers = darken(desaturate(base, 10%), 60%)
 
+@font-face
+  font-family: 'icomoon';
+  src:url('fonts/icomoon.eot');
+  src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.svg#icomoon') format('svg'),
+    url('fonts/icomoon.woff') format('woff'),
+    url('fonts/icomoon.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+.icon:before
+  font-family 'icomoon'
+  font-size 1.2em
+  font-style: normal
+  speak: none
+  font-weight: normal
+  line-height 1
+  vertical-align -15%
+  padding-right 0.52em
+
+.icon-home:before
+  @extends .icon:before
+  content 'h'
+
+.icon-email:before
+  @extends .icon:before
+  content 'e'
+
+.icon-twitter:before
+  @extends .icon:before
+  content 't'
+
+.icon-gplus:before
+  @extends .icon:before
+  content '+'
+
+.icon-github:before
+  @extends .icon:before
+  content 'g'
+
+.icon-vimeo:before
+  @extends .icon:before
+  content 'v'
+
 body
   font-family: 'Source Sans Pro', sans-serif
   color: #444
-  line-height: 1.5em
+  line-height: 1.75em
   font-size: 16px
   background-image: url(img/bg.png)
-  margin: 20px
+  margin: 1.25em
   padding: 0
 
 h1, h2, h3
@@ -26,6 +70,7 @@ h1, h2, h3
 
 p + p
   text-indent: 2em
+  padding-top: 1.5em
 
 a
   color: links
@@ -35,29 +80,44 @@ a:hover
   color: darken(links, 40%)
 
 #container
-  display: flex
-  flex-direction: column
-  width 100%
-
-.article header
-  box-ordinal-group: 2
-  order: 2
+  margin auto
 
 header
   width: 100%
   max-width 35em
   margin: auto
-  padding: 10px 0
-  margin-bottom: -10px
-  padding-bottom: 10px
+  padding: 0.625em 0
+  margin-bottom: -0.625em
+  padding-bottom: 0.625em
 
 header p
-  margin: 10px
+  margin: 0.625em
   margin-top: 0
 
 header h1, header h2
-  @extends header p
+  margin: 0.3125em
+  margin-top: 0
   font-size: 2em
+
+header h1 a, header h2 a
+  text-decoration inherit
+  color inherit
+
+header button
+  font-family 'icomoon'
+  font-size 2em
+  color headers
+  cursor pointer
+  border none
+  display block
+  background none
+  width 1.25em
+  height 1.25em
+  margin-left auto
+  margin-top -1.4em
+
+.home header button
+  display none
 
 header ul
   list-style: none
@@ -65,18 +125,23 @@ header ul
   padding: 0
   border-top: 1px solid #bbb
   border-top-color: rgba(0, 0, 0, 0.2)
+  overflow hidden
+  height 282px
+  transition height 0.5s ease, opacity 0.5s ease
 
-header a
+.hide-nav header ul
+  height 0
+  opacity 0
+
+header li a
   display: block
+  text-decoration none
   height: 35px
   line-height: 35px
-  padding: 5px 10px
+  padding: 5px 0.625em
   border-top: 1px solid white
   border-bottom: 1px solid #bbb
   border-bottom-color: rgba(0, 0, 0, 0.2)
-
-header a:hover
-  padding-left: 20px
 
 header li:last-child a
   border-bottom: none
@@ -84,14 +149,21 @@ header li:last-child a
 section
   background-color: #FFF
   background-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.3)
-  border-radius: 5px
-  padding: 20px 0
+  box-shadow: 0 0.0625em 0.3125em rgba(0, 0, 0, 0.3)
+  border-radius: 0.3125em
+  padding: 0.625em 0
   max-width: 35em
   margin auto
+  font-weight 350
 
-section > h2, section > h1, section p
-  margin 0 20px
+section > h2, section > h1
+  font-size 2em
+  font-weight 200
+  padding-top 0.3125em
+  margin 0 0.625em
+
+section p
+  margin 0 1.25em
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (   min--moz-device-pixel-ratio: 1.5), only screen and (     -o-min-device-pixel-ratio: 1.5), only screen and (        min-device-pixel-ratio: 1.5), only screen and (                min-resolution: 144dpi), only screen and (                min-resolution: 1.5dppx)
   body
@@ -99,6 +171,9 @@ section > h2, section > h1, section p
     background-size: 200px 200px
 
 @media only screen and (min-width: 27em) and (max-width: 46.999em)
+  header ul
+    height 141px
+
   header li
     display inline-block
     width 50%
@@ -114,9 +189,13 @@ section > h2, section > h1, section p
     border-bottom: none
 
 @media only screen and (min-width: 47em)
+  body
+    background-attachment fixed
+
   #container
     display block
     padding-left 18em
+    width auto
     max-width 53em
     margin auto
 
@@ -128,16 +207,26 @@ section > h2, section > h1, section p
     padding 10px
     padding-top 30px
 
+  header button
+    display none
+
+  header ul
+    transition none
+    height auto
+    border-bottom 1px solid white
+
+  .hide-nav header ul
+    height auto
+    opacity 1
+
   header li:last-child a
     border-bottom: 1px solid #bbb
 
-  header ul
-    border-bottom 1px solid white
-
   section
     width 100%
+    margin-bottom 1.25em
 
-@media only screen and (min-width: 47em) and (max-height: 32em)
+@media only screen and (min-width: 47em) and (max-height: 35em)
   header
     position absolute
 

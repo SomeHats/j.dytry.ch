@@ -7,27 +7,44 @@
     <link rel="stylesheet" href="/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   </head>
-  <body class="{% if page.home %}home{% else %}article{% endif %}" >
+  <body class="{% if page.home %}home{% else %}article hide-nav{% endif %}" >
     <div id="container">
       <header role="banner">
         {% if page.home %}<h1>{% else %}<h2>{% endif %}
-        Joe Dytrych
+        <a href="/">Joe Dytrych</a>
         {% if page.home %}</h1>{% else %}</h2>{% endif %}
+        <button>m</button>
         <p>17. Student. Mozillian. Developer. Not tall enough. Tea lover. Owns small dog. I call myself &quot;SomeHats&quot; online because no one can spell my real name.</p>
         <nav role="navigation">
           <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="&#x6d;&#97;&#105;&#x6c;&#x74;&#111;&#x3a;&#x6d;&#x65;&#64;&#x6a;&#x64;&#121;&#116;&#114;&#x79;&#99;&#104;&#x2e;&#x63;&#111;&#46;&#117;&#107;" title="Email">&#x6d;&#x65;&#x40;&#x6a;&#x64;&#x79;&#x74;&#114;&#121;&#x63;&#x68;&#x2e;&#x63;&#111;&#x2e;&#x75;&#x6b;</a></li>
-            <li><a href="http://twitter.com/SomeHats" title="Twitter">@SomeHats<span> - Twitter</span></a></li>
-            <li><a href="https://plus.google.com/115388676990964283956">Joe Dytrych<span> - Google+</span></a></li>
-            <li><a href="https://github.com/SomeHats" title="GitHub"><span>SomeHats - Github</span></a></li>
-            <li><a href="http://www.last.fm/user/joedytrych" title="Last.fm">joedytrych<span> - Last.fm</span></a></li>
+            <li><a href="/" class="icon-home">
+              Home
+            </a></li>
+            <li><a href="&#x6d;&#97;&#105;&#x6c;&#x74;&#111;&#x3a;&#x6d;&#x65;&#64;&#x6a;&#x64;&#121;&#116;&#114;&#x79;&#99;&#104;&#x2e;&#x63;&#111;&#46;&#117;&#107;" title="Email" class="icon-email">
+              &#x6d;&#x65;&#x40;&#x6a;&#x64;&#x79;&#x74;&#114;&#121;&#x63;&#x68;&#x2e;&#x63;&#111;&#x2e;&#x75;&#x6b;
+            </a></li>
+            <li><a href="http://twitter.com/SomeHats" title="Twitter" class="icon-twitter">
+              @SomeHats
+            </a></li>
+            <li><a href="https://plus.google.com/115388676990964283956" title="Google +" class="icon-gplus">
+              Joe Dytrych
+            </a></li>
+            <li><a href="https://github.com/SomeHats" title="GitHub"  class="icon-github">
+              SomeHats
+            </a></li>
+            <li><a href="https://vimeo.com/somehats" title="Vimeo" class="icon-vimeo">
+              SomeHats
+            </a></li>
           </ul>
         </nav>
       </header>
       <section role="main">
         {{ content }}
       </section>
+      <footer>
+
+      </footer>
     </container>
+    <script type="text/javascript" src="/js/nav.js"></script>
   </body>
 </html>
