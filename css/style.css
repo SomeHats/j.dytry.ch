@@ -51,7 +51,7 @@ body {
 h1,
 h2,
 h3 {
-  color: #056141;
+  color: #560561;
   line-height: 1.1em;
   font-weight: 300;
 }
@@ -60,7 +60,7 @@ p + p {
   padding-top: 1.5em;
 }
 a {
-  color: #0da570;
+  color: #930da5;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
@@ -68,7 +68,12 @@ a {
   transition: all 0.5s ease;
 }
 a:hover {
-  color: #086343;
+  color: #580863;
+}
+img {
+  max-width: 100%;
+  display: block;
+  margin: auto;
 }
 #container {
   margin: auto;
@@ -99,7 +104,7 @@ header h2 a {
 header button {
   font-family: 'icomoon';
   font-size: 2em;
-  color: #056141;
+  color: #560561;
   cursor: pointer;
   border: none;
   display: block;
@@ -116,10 +121,8 @@ header ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  border-top: 1px solid #bbb;
-  border-top-color: rgba(0,0,0,0.2);
   overflow: hidden;
-  height: 282px;
+  height: 276px;
   -webkit-transition: height 0.5s ease, opacity 0.5s ease;
   -moz-transition: height 0.5s ease, opacity 0.5s ease;
   -o-transition: height 0.5s ease, opacity 0.5s ease;
@@ -138,9 +141,8 @@ header li a {
   height: 35px;
   line-height: 35px;
   padding: 5px 0.625em;
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #bbb;
-  border-bottom-color: rgba(0,0,0,0.2);
+  border-top: 1px solid #bbb;
+  border-color: rgba(0,0,0,0.2);
 }
 header li:last-child a {
   border-bottom: none;
@@ -167,6 +169,38 @@ section > h1 {
 section p {
   margin: 0 1.25em;
 }
+.listing {
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.listing a {
+  display: block;
+  text-decoration: none;
+  position: relative;
+}
+.listing h3 {
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  text-decoration: none;
+  height: 3.2em;
+  line-height: 3.2em;
+  margin-bottom: -3.2em;
+  padding: 0 1.1em;
+  position: relative;
+}
+.listing p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #fff;
+  background-color: rgba(0,0,0,0.5);
+  margin: 0;
+  padding: 0.6em 1.25em;
+  line-height: 1.4em;
+}
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (   min--moz-device-pixel-ratio: 1.5), only screen and (     -o-min-device-pixel-ratio: 1.5), only screen and (        min-device-pixel-ratio: 1.5), only screen and (                min-resolution: 144dpi), only screen and (                min-resolution: 1.5dppx) {
   body {
     background-image: url("img/bg@2X.png");
@@ -177,21 +211,15 @@ section p {
 }
 @media only screen and (min-width: 27em) and (max-width: 46.999em) {
   header ul {
-    height: 141px;
+    height: 138px;
   }
   header li {
     display: inline-block;
     width: 50%;
     margin-right: -3px;
   }
-  header li:nth-child(2n) {
-    border-left: 1px solid #fff;
-  }
   header li:nth-child(2n+1) {
     border-right: 1px solid #bbb;
-  }
-  header li:nth-last-child(2) a {
-    border-bottom: none;
   }
 }
 @media only screen and (min-width: 47em) {
@@ -223,7 +251,6 @@ section p {
     -ms-transition: none;
     transition: none;
     height: auto;
-    border-bottom: 1px solid #fff;
   }
   .hide-nav header ul {
     height: auto;
@@ -237,6 +264,10 @@ section p {
   section {
     width: 100%;
     margin-bottom: 1.25em;
+  }
+  .listing p {
+    padding: 0.8em 1.25em;
+    line-height: inherit;
   }
 }
 @media only screen and (min-width: 47em) and (max-height: 35em) {
