@@ -14,13 +14,12 @@
 
       button.addEventListener("click", function () {
         status = !status;
-        console.log("fire");
         if (status) {
           document.body.className += " hide-nav";
         } else {
           document.body.className = document.body.className.replace("hide-nav", "");
         }
-      });
+      }, false);
     }
   }, false);
 }());
