@@ -134,7 +134,8 @@ header
     transition height 0.5s ease, opacity 0.5s ease
 
     .hide-nav &
-      height 0
+      transform translate3d(0, 0, 0)
+      //height 0
       opacity 0
 
   li a
@@ -159,6 +160,13 @@ section
   margin auto
   font-weight 350
   overflow hidden
+  transition transform 0.5s ease
+  transform translate(0, 0)
+  transform translate3d(0, 0, 0)
+
+  .hide-nav &
+    transform: translate(0, -276px);
+    transform: translate3d(0, -276px, 0);
 
   .article &
     padding-top 0
@@ -235,8 +243,12 @@ section
       width 50%
       margin-right -3px
 
-      :nth-child(2n+1)
+      &:nth-child(2n+1)
         border-right 1px solid #bbb
+
+  .hide-nav section
+    transform translate(0, -138px)
+    transform translate3d(0, -138px, 0)
 
 @media only screen and (min-width: 47em)
   body
@@ -274,6 +286,10 @@ section
   section
     width 100%
     margin-bottom 1.25em
+
+    .hide-nav &
+      transform translate(0, 0)
+      transform translate3d(0, 0, 0)
 
   .listing
     h3
