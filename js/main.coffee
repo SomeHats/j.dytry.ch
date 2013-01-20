@@ -39,6 +39,7 @@ document.addEventListener "DOMContentLoaded", ->
   resizeImages = ->
     images = document.querySelectorAll "img"
     for image in images
+      image.addEventListener "load", resizeImages, false
       if (!image.hasAttribute "data-2x-loaded") and image.hasAttribute "data-2x"
         resize image
 
