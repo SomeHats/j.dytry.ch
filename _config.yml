@@ -1,4 +1,4 @@
 pygments: true
 permalink: /:year/:title.html
 exclude: ["node_modules"]
-#compress: true
+compress: true
