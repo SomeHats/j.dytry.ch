@@ -1,7 +1,13 @@
 ---
 layout: default
 ---
-<h1 role="heading">{{ page.title }}</h1>
 <article role="article">
+  <div class="listing">
+    <span>
+      <h1>{{ page.title }}</h1>
+      <img src="{{ page.image }}" alt="{{ page.image_alt }}" {% if page.image_2x %}data-2x="{{ page.image_2x }}"{% endif %}>
+      <p>{{ page.description }}</p>
+    </span>
+  </div>
   {{ content }}
 </article>

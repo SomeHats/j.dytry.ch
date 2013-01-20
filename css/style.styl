@@ -59,7 +59,8 @@ body
   color: #444
   line-height: 1.75em
   font-size: 16px
-  background-image: url(img/bg.png)
+  background-image: url(img/bg@2x.png)
+  background-size: 200px 200px
   margin: 1.25em
   padding: 0
 
@@ -95,58 +96,58 @@ header
   margin-bottom: -0.625em
   padding-bottom: 0.625em
 
-header p
-  margin: 0.625em
-  margin-top: 0
+  p
+    margin: 0.625em
+    margin-top: 0
 
-header h1, header h2
-  margin: 0.3125em
-  margin-top: 0
-  font-size: 2em
+  h1, h2
+    margin: 0.3125em
+    margin-top: 0
+    font-size: 2em
 
-header h1 a, header h2 a
-  text-decoration inherit
-  color inherit
+    a
+      text-decoration inherit
+      color inherit
 
-header button
-  font-family 'icomoon'
-  font-size 2em
-  color headers
-  cursor pointer
-  border none
-  display block
-  background none
-  width 1.25em
-  height 1.25em
-  margin-left auto
-  margin-top -1.4em
+  button
+    font-family 'icomoon'
+    font-size 2em
+    color headers
+    cursor pointer
+    border none
+    display block
+    background none
+    width 1.25em
+    height 1.25em
+    margin-left auto
+    margin-top -1.4em
 
-.home header button
-  display none
+    .home &
+      display none
 
-header ul
-  list-style: none
-  margin: 0
-  padding: 0
-  overflow hidden
-  height 276px
-  transition height 0.5s ease, opacity 0.5s ease
+  ul
+    list-style: none
+    margin: 0
+    padding: 0
+    overflow hidden
+    height 276px
+    transition height 0.5s ease, opacity 0.5s ease
 
-.hide-nav header ul
-  height 0
-  opacity 0
+    .hide-nav &
+      height 0
+      opacity 0
 
-header li a
-  display: block
-  text-decoration none
-  height: 35px
-  line-height: 35px
-  padding: 5px 0.625em
-  border-top: 1px solid #bbb
-  border-color: rgba(0, 0, 0, 0.2)
+  li a
+    display: block
+    text-decoration none
+    height: 35px
+    line-height: 35px
+    padding: 5px 0.625em
+    border-top: 1px solid #bbb
+    border-color: rgba(0, 0, 0, 0.2)
 
-header li:last-child a
-  border-bottom: none
+  li:last-child a
+    border-bottom: none
 
 section
   background-color: #FFF
@@ -157,15 +158,19 @@ section
   max-width: 35em
   margin auto
   font-weight 350
+  overflow hidden
 
-section > h2, section > h1
-  font-size 2em
-  font-weight 200
-  padding-top 0.3125em
-  margin 0 0.625em
+  .article &
+    padding-top 0
 
-section p
-  margin 0 1.25em
+  > h2, > h1
+    font-size 2em
+    font-weight 200
+    padding-top 0.3125em
+    margin 0 0.625em
+
+  p
+    margin 0 1.25em
 
 .listing
   text-shadow 0 1px 2px rgba(0, 0, 0, 0.5)
@@ -173,48 +178,65 @@ section p
   margin 0
   padding 0
 
-.listing a
-  display block
-  text-decoration none
-  position relative
+  .article &
+    margin-bottom: 1em
 
-.listing h3
-  background rgba(0, 0, 0, 0.5)
-  color white
-  text-decoration none
-  height 2.6em
-  line-height 2.6em
-  margin-bottom -2.6em
-  padding 0 1.1em
-  position relative
+  a, span
+    display block
+    text-decoration none
+    position relative
 
-.listing p
-  position absolute
-  bottom 0
-  left 0
-  right 0
-  color white
-  background-color rgba(0, 0, 0, 0.5)
-  margin 0
-  padding 0.6em 1.25em
-  line-height 1.4em
+  h3
+    background rgba(0, 0, 0, 0.5)
+    color white
+    text-decoration none
+    height 2.6em
+    line-height 2.6em
+    margin-bottom -2.6em
+    padding 0 1.1em
+    position relative
 
+  .article & h1
+    @extends .listing h3
+    font-size 1.5em
+    margin-top 0
+    border-radius: (0.3125em / 1.25) (0.3125em / 1.25) 0 0
+
+  p
+    position absolute
+    bottom 0
+    left 0
+    right 0
+    color white
+    background-color rgba(0, 0, 0, 0.5)
+    margin 0
+    padding 0.6em 1.25em
+    line-height 1.4em
+
+  img
+    width 100%
+
+    .article &
+      border-radius: 0.3125em 0.3125em 0 0
+/*
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (   min--moz-device-pixel-ratio: 1.5), only screen and (     -o-min-device-pixel-ratio: 1.5), only screen and (        min-device-pixel-ratio: 1.5), only screen and (                min-resolution: 144dpi), only screen and (                min-resolution: 1.5dppx)
   body
-    background-image: url(img/bg@2X.png)
+    background-image: url(img/bg@2x.png)
     background-size: 200px 200px
+*/
 
 @media only screen and (min-width: 27em) and (max-width: 46.999em)
-  header ul
-    height 138px
+  header
+    ul
+      height 138px
 
-  header li
-    display inline-block
-    width 50%
-    margin-right -3px
+    li
+      display inline-block
+      width 50%
+      margin-right -3px
 
-  header li:nth-child(2n+1)
-    border-right 1px solid #bbb
+      :nth-child(2n+1)
+        border-right 1px solid #bbb
 
 @media only screen and (min-width: 47em)
   body
@@ -235,32 +257,33 @@ section p
     padding 10px
     padding-top 30px
 
-  header button
-    display none
+    button
+      display none
 
-  header ul
-    transition none
-    height auto
+    ul
+      transition none
+      height auto
 
-  .hide-nav header ul
-    height auto
-    opacity 1
+      .hide-nav &
+        height auto
+        opacity 1
 
-  header li:last-child a
-    border-bottom: 1px solid #bbb
+    li:last-child a
+      border-bottom: 1px solid #bbb
 
   section
     width 100%
     margin-bottom 1.25em
 
-  .listing h3
-    height 3.2em
-    line-height 3.2em
-    margin-bottom -3.2em
+  .listing
+    h3
+      height 3.2em
+      line-height 3.2em
+      margin-bottom -3.2em
 
-  .listing p
-    padding 0.8em 1.25em
-    line-height inherit
+    p
+      padding 0.8em 1.25em
+      line-height inherit
 
 @media only screen and (min-width: 47em) and (max-height: 35em)
   header

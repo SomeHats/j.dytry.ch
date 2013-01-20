@@ -8,7 +8,7 @@ home: true
   <li>
     <a href="{{ post.url }}">
       <h3>{{ post.title }}</h3>
-      <img src="{{ post.image }}" alt="{{ image-alt }}">
+      <img src="{{ post.image }}" alt="{{ post.image_alt }}" {% if post.image_2x %}data-2x="{{ post.image_2x }}"{% endif %}>
       <p>{{ post.description }}</p>
     </a>
   </li>
