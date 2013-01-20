@@ -122,10 +122,10 @@ module Jekyll
               # If the name has an @2x, make a resized copy too.
               if @name.match(/@2[xX]/)
                 small = halfImg dest_path, dest
-                #small_path = File.join(dest, @dir, small)
-                #print "Optimising #{small}... "
-                #result = Optipng.optimize([small_path], { :level => 2}).succeed
-                #print "#{result.shift()[1] * -1}% reduction.\n"
+                small_path = File.join(dest, @dir, small)
+                print "Optimising #{small_path}... "
+                result = Optipng.optimize([small_path], { :level => 2}).succeed
+                print "#{result.shift()[1] * -1}% reduction.\n"
               end
               print "Optimising #{@name}... "
               result = Optipng.optimize([dest_path], { :level => 2}).succeed
@@ -180,7 +180,7 @@ module Jekyll
         print "Resizing #{@name}... "
         small_name = @name.gsub(/@2[xX]/, "")
         out = File.join(dest, @dir, small_name)
-        IO.popen("convert #{dest_path} -resize 50% #{out}")
+        IO.popen("convert #{dest_path} -resize 50% #{out}").readlines
         print "Saved as #{small_name}\n"
         small_name
       end
