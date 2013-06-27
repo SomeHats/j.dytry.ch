@@ -125,11 +125,11 @@ module Jekyll
                 small_path = File.join(dest, @dir, small)
                 print "Optimising #{small_path}... "
                 result = Optipng.optimize([small_path], { :level => 2}).succeed
-                print "#{result.shift()[1] * -1}% reduction.\n"
+                #print "#{result.shift()[1] * -1}% reduction.\n"
               end
               print "Optimising #{@name}... "
               result = Optipng.optimize([dest_path], { :level => 2}).succeed
-              print "#{result.shift()[1] * -1}% reduction.\n"
+              #print "#{result.shift()[1] * -1}% reduction.\n"
 
             when '.jpg', '.jpeg'
               # If the name has an @2x, make a resized copy too.
